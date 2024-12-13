@@ -10,9 +10,7 @@ struct emp{
 
     }
     emp public employee;
-    // function getEmployee()public view returns(string memory,string memory,string memory ,uint16,address payable ) {
-    //     return (employee.name,employee.departmentment,employee.designationation,employee.salary, employee.paymentAddress);
-    // }
+
     function setEmployee(string memory _name,string memory _department,string memory _designation,uint16 _salary,address payable _paymentAddress) public {
         employee.name=_name;
         employee.departmentment=_department;

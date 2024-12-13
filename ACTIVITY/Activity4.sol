@@ -50,7 +50,6 @@ contract SMS {
                 return;
             }
         }
-        // revert("Student not found");
     }
 
     function getStudentData() public view returns (StudentData[] memory){

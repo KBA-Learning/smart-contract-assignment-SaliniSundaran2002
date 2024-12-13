@@ -2,17 +2,19 @@
 pragma solidity 0.8.28;
 
 contract SMS {
+    enum department {CS,EC,ME}
     struct StudentData {
         uint256 id;
         string name;
         string sem;
-        string dept;
+        department dept;
         uint256 CGPA;
         uint256 rollNo;
         address studentAddress;
     }
 
     address public staffAdvisor;
+        string name;
 
     modifier onlyStaffAdvisor {
         require(msg.sender == staffAdvisor, "Unauthorized access");
@@ -29,7 +31,7 @@ contract SMS {
         uint256 _id,
         string memory _name,
         string memory _sem,
-        string memory _dept,
+        department _dept,
         uint256 _CGPA,
         uint256 _rollNo,
         address _studentAddress
@@ -48,7 +50,7 @@ contract SMS {
                 return;
             }
         }
-        revert("Student not found");
+        // revert("Student not found");
     }
 
     function getStudentData() public view returns (StudentData[] memory){

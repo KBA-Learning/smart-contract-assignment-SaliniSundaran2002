@@ -21,9 +21,7 @@ contract Certi{
     modifier OnlyAdmin{
         require(msg.sender == admin, "Unauthorised access");
         _;
-    }
-
-    
+    } 
 
     function issueCertificate( uint16 _id, string memory _name, string memory _course, string memory _grade, string memory _date) public OnlyAdmin {
         require( bytes(Cert[_id].name).length == 0 , "Already existed");
